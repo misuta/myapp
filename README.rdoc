@@ -1,6 +1,6 @@
 == README
 
-This are my first steps in Ruby on Rails.
+These are my first steps in Ruby on Rails.
 
 I'm using :
 

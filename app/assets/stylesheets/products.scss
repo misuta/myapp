@@ -17,5 +17,29 @@ td, th {
 
 .item_description {
 	font-size: 1.2 em;
-	text-align: justify;
+	border-width: thin 0px;
+	border-style: solid;
+	text-align: left;
+}
+
+.each_product{
+	margin: .5em;
+	padding: 1px;
+	border-style: solid;
+	border-width: thin;
+	border-radius: 10px;
+}
+
+.img_product {
+	border-radius: 10px 10px 0px 0px;
+}
+
+.item_price {
+	border-style: solid;
+	border-width: thin 0px;
+
+}
+
+.each_product span {
+	margin: auto .5em;
 }

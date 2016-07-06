@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
 	def index
-		
+		@orders = Order.all
 	end
 
 	def create
@@ -18,6 +18,12 @@ class OrdersController < ApplicationController
 
 	def destroy
 		
+	end
+
+	private
+
+	def order_params
+	  params.require(:order).permit(:id, :total, :product_id, :user_id)
 	end
 
 end

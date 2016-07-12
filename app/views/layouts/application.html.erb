@@ -51,12 +51,16 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <!--<form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      </form>-->
+      <%= form_tag("/products", class:"navbar-form navbar-left", role:"search", method:"get") do %>
+        <%= content_tag(:div, text_field_tag('q', nil, class:"form-control", placeholder:"search"), class:"form-group") %>
+          <%= submit_tag("Search", class:"btn btn-default") %>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Shopping Cart</a></li>
         <li class="dropdown">
@@ -80,8 +84,8 @@
   &copy; 2016 Mizuta Berlin
 </footer>-->
 
-<footer>
-  <div class="container">
+<footer class="container-fluid">
+  <div >
     <p class="text-muted">&copy; 2016 Mizuta Berlin.</p>
   </div>
 </footer>

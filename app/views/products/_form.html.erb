@@ -1,4 +1,4 @@
-<%= form_for(@product) do |f| %>
+<%= form_for(@product, html:{class:"edit_product form-horizontal"}) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -11,27 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label 'name', class:"control-label col-xs-2" %><br>
+    <div class="col-xs-4">
+      <%= f.text_field 'name', class:"form-control", title:"Name" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  
+  <div class="form-group">
+    <%= f.label 'description', class:"control-label col-xs-2" %><br>
+    <div class="col-xs-4">
+      <%= f.text_area :description, class:"form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
+
+  <div class="form-group">
+    <%= f.label :image_url, class:"control-label col-xs-2" %><br>
+    <div class="col-xs-4">
+      <%= f.text_field :image_url, class:"form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_field :colour %>
+
+  <div class="form-group">
+    <%= f.label 'color', class:"control-label col-xs-2" %><br>
+    <div class="col-xs-4">
+      <%= f.text_field 'colour', class:"form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+
+  <div class="form-group">
+    <%= f.label 'price', class:"control-label col-xs-2" %><br>
+    <div class="col-xs-4">
+      <%= f.text_field 'price', class:"form-control" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions col-xs-9 col-xs-offset-3">
+    <%= f.submit class:"btn btn-default", id:"update_button" %>
   </div>
 <% end %>

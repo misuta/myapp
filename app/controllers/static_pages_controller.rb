@@ -14,4 +14,7 @@ class StaticPagesController < ApplicationController
   	#@products = Product.limit(3)
   	@products = Product.all
   end
+
+  def admin_search
+  end
 end

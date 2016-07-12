@@ -4,7 +4,16 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    if params[:q]
+      search_term = params[:q]
+      if Rails.env.production?
+        @products = Product.where("name ilike ?", "%#{search_term}%")
+      else
+        @products = Product.where( "name LIKE ?", "%#{search_term}%")
+      end
+    else
     @products = Product.all
+    end
   end
 
   # GET /products/1
@@ -19,6 +28,10 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    if params[:q1]
+      id_product = params[:q1]
+      @product = Product.find(id_product)
+    end
   end
 
   # POST /products
@@ -64,7 +77,12 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      if params[:q1]
+        id_product = params[:q1]
+        @product = Product.find(id_product)
+      else
+        @product = Product.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

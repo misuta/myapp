@@ -1,0 +1,21 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#row_title_new_session {
+	margin-bottom: 2%;
+}
+
+#row_title_new_session h2 {
+	text-align: center;
+}
+
+.user_body {
+	background-color: aliceblue;
+}
+
+ #cancel_button {
+	display: block;
+	position: relative;
+	float: right;
+}

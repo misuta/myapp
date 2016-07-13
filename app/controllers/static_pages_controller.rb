@@ -6,7 +6,8 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
-  	@contact_page = true
+  	@pagebody = true
+    @page_body = 'contact_page'
   end
 
   def landing_page

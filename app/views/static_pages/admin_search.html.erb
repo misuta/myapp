@@ -3,6 +3,6 @@
 <p>Here you can search for a product ID in order to edit it</p>
 
 <%= form_tag("/products/:id/edit", role:"search", method:"get") do %>
-        <%= content_tag(:div, text_field_tag('q1', nil, class:"form-control", placeholder:"search"), class:"form-group col-xs-4 col-offset-8") %>
-          <%= content_tag(:div, submit_tag("Search", class:"btn btn-default"), class:"col-xs-4 col-offset-4") %>
-      <% end %>
+  <%= content_tag(:div, text_field_tag('q1', nil, class:"form-control", placeholder:"search"), class:"form-group col-xs-4 col-xs-offset-4") %>
+  	<%= content_tag(:div, submit_tag("Search", class:"btn btn-default col-xs-offset-1"), class:"col-xs-4 col-xs-offset-5") %>
+<% end %>

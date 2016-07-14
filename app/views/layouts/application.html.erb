@@ -72,11 +72,19 @@
           <%= submit_tag("Search", class:"btn btn-default") %>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Shopping Cart</a></li>
+        <li>
+          <% if user_signed_in? %>
+            <%= link_to('Orders', orders_path) %>
+          <% end %>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Orders</a></li>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to('Orders', orders_path) %>
+              <% end %>
+            </li>
             <li>
               <% if user_signed_in? %>
                 <%= link_to( 'Settings', edit_user_registration_path) %>
@@ -98,8 +106,16 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% if notice %>
+  <div class="alert alert-warning" role="alert" id="alert">
+    <p class="notice"><%= notice %></p>
+  </div>
+<% end %>
+<% if alert %>
+  <div class="alert alert-danger" role="alert" id="alert">
+    <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
 
 <%= yield %>
 

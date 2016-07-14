@@ -1,12 +1,13 @@
 class OrdersController < ApplicationController
 	before_filter :authenticate_user!
+	before_action :authenticate_user!, :except => [:show, :index]
+	load_and_authorize_resource
 
 	def index
-		@orders = Order.all
+		@order = Order.accessible_by(current_ability)
 	end
 
 	def create
-		
 	end
 
 	def show
@@ -14,11 +15,11 @@ class OrdersController < ApplicationController
 	end
 
 	def new
-		
+
 	end
 
 	def destroy
-		
+
 	end
 
 	private

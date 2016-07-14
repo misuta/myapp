@@ -1,32 +1,27 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource
+
 
   # GET /users
   # GET /users.json
   def index
-    @pagebody = true
-    @page_body = 'user_body'
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    @pagebody = true
-    @page_body = 'user_body'
   end
 
   # GET /users/new
   def new
-    @pagebody = true
-    @page_body = 'user_body'
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
-    @pagebody = true
-    @page_body = 'user_body'
   end
 
   # POST /users

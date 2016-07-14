@@ -1,6 +1,13 @@
-<h2>Test...</h2>
+<h2 id="order_index">Test...</h2>
 <% @orders.each do |order| %>
-	<% order.product %>
-	<p><%= order.product.name %></p>
-  <p><%= order.id %></p>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-4">
+				<p><strong>Product name: </strong><%= order.product.name %></p>
+				<p><strong>Order ID: </strong><%= order.id %></p>
+				<strong>User ID: </strong><%= order.user_id %>
+			</div>
+		</div>
+	</div>
 <% end %>

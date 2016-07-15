@@ -3,7 +3,9 @@ Rails.application.routes.draw do
    :sign_out => 'logout'}
    
   resources :users
-  resources :products
+  resources :products do
+    resources :comments
+  end
 
   get 'static_pages/about' => 'static_pages#about'
 

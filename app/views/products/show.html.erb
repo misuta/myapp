@@ -15,11 +15,13 @@
       </ul>
       </p>
       <br>
-      <p>comments</p>
-      <br>
+      <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
       <p class="item_price"><strong><%= @product.price %> €</strong></p>
-      <p><%= link_to 'Back', products_path, class:"btn btn-primary", role:"button" %> <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default", role:"button" %> </p>
+      <br>
+      <p><div><%= link_to 'Back', products_path, class:"btn btn-primary", role:"button" %> <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default", role:"button" %> </div> </p>
+      <p><%= render 'comments' %></p>
     </div>
   </div>
 </div>
 
+<%= render 'new_comment' %>

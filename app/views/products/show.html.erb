@@ -1,29 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<div class="container-fluid">
+  <div class="row">
+   <div class="col-sm-offset-2 col-sm-8 col-md-6 this_product">
+    <div class="thumbnail">
+      <%= image_tag(@product.image_url)%>
+    </div>
+    <div class="caption">
+      <h3 class="item_name"><%= @product.name %></h3>
+      <p class="item_description"><%= @product.description %> 
+      <ul>
+        <li>Color: <%= @product.colour %></li>
+      </ul>
+      </p>
+      <br>
+      <p>comments</p>
+      <br>
+      <p class="item_price"><strong><%= @product.price %> €</strong></p>
+      <p><%= link_to 'Back', products_path, class:"btn btn-primary", role:"button" %> <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default", role:"button" %> </p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-	<strong>Color:</strong>
-	<%= @product.colour %>
-</p>
-
-<p>
-	<strong>Price:</strong>
-	<%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>

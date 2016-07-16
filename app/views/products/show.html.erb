@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<% notice %><p id="notice"></p>
 
 
 <div class="container-fluid">
@@ -20,6 +20,7 @@
       <br>
       <p><div><%= link_to 'Back', products_path, class:"btn btn-primary", role:"button" %> <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default", role:"button" %> </div> </p>
       <p><%= render 'comments' %></p>
+      <p><small><em><%= will_paginate @comments %> <%= page_entries_info @comments %></em></small> </p>
     </div>
   </div>
 </div>

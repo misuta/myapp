@@ -54,6 +54,10 @@ group :production do
     gem 'pg'
 end
 
+group :development, :test do
+	gem 'rspec-rails', '~> 3.4'
+end
+
 gem 'devise'
 
 gem 'cancancan'

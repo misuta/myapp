@@ -8,6 +8,7 @@ class Ability
     else
         can :manage, User, id: user.id
         can :read, Order, user_id: user.id
+        can :create, Order
         can [:read, :create], Comment
         can :destroy, Comment, user_id: user.id
 

@@ -76,5 +76,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :orders, only: [:index, :show, :create, :destroy]
+  resources :orders, only: [:index, :show, :create, :destroy, :new]
 end

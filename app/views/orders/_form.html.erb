@@ -1,0 +1,34 @@
+<%= form_for(@order, html:{class:"form-horizontal"}) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if current_user.admin? %>
+    <div class="form-group">
+      <%= f.label :user_id, class:"control-label col-xs-2" %><br>
+      <div class="col-xs-4">
+        <%= f.text_field :user_id, class:"form-control", title:"Product ID" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :product_id, class:"control-label col-xs-2" %><br>
+    <div class="col-xs-4">
+      <%= f.text_field :product_id, class:"form-control", title:"Product ID" %>
+    </div>
+  </div>
+
+
+  <div class="actions col-xs-9 col-xs-offset-3">
+    <%= f.submit class:"btn btn-default", id:"update_button" %>
+  </div>
+<% end %>

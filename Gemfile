@@ -63,3 +63,7 @@ gem 'devise'
 gem 'cancancan'
 
 gem 'will_paginate', '~> 3.0.5'
+
+group :development, :test do
+  gem 'factory_girl_rails', '~> 4.2'
+end

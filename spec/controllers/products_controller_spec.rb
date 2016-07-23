@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe ProductsController, :type => :controller do
 
-	let(:product) { create(:product) }
-	let(:user) { create(:user) }
-	let(:admin) { create(:user, email: "another@email.com", password:"1234567890", admin: true)}
+	let(:product) { FactoryGirl.create(:product) }
+	let(:user) { FactoryGirl.create(:user) }
+	let(:admin) { FactoryGirl.create(:admin)}
 
 	describe 'GET #new' do
 

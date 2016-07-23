@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe OrdersController, :type => :controller do
 
-	let(:user) { create(:user) }
-	let(:product) { create(:product) }
-	let(:order) { Order.create!(user_id: user.id, product_id: product.id)}
+	let(:user) {FactoryGirl.create(:user)}
+	let(:product) {FactoryGirl.create(:product)}
+	let(:order) {Order.create!(user_id: user.id, product_id: product.id)}
 
 	describe 'GET #show' do
 

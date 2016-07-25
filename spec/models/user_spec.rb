@@ -11,13 +11,13 @@ describe User, :type => :model do
 	context 'when user is created' do
 
 		it 'is not valid' do
-			user = build(:user, email: "")
+			user = FactoryGirl.build(:user, email: "")
 			expect(user).not_to be_valid
 			
 		end
 
 		it 'is valid' do
-			user = build(:user)
+			user = FactoryGirl.build(:user)
 			expect(user).to be_valid
 			
 		end

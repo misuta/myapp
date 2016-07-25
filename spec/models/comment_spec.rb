@@ -29,7 +29,7 @@ describe 'Comment' do
 
 	context 'factory test' do
 
-		let(:comment) {build(:comment)}
+		let(:comment) {FactoryGirl.build(:comment)}
 
 		it 'shows if factory is working' do
 

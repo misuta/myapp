@@ -13,7 +13,7 @@
 
   <% if current_user.admin? %>
     <div class="form-group">
-      <%= f.label :user_id, class:"control-label col-xs-2" %><br>
+      <%= f.label :user_id, class:"col-xs-offset-2 control-label col-xs-2" %><br>
       <div class="col-xs-4">
         <%= f.text_field :user_id, class:"form-control", title:"Product ID" %>
       </div>
@@ -21,7 +21,7 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :product_id, class:"control-label col-xs-2" %><br>
+    <%= f.label :product_id, class:"col-xs-offset-2 control-label col-xs-2" %><br>
     <div class="col-xs-4">
       <%= f.text_field :product_id, class:"form-control", title:"Product ID" %>
     </div>

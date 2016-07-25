@@ -18,9 +18,16 @@
       <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
       <p class="item_price"><strong><%= @product.price %> €</strong></p>
       <br>
-      <p><div><%= link_to 'Back', products_path, class:"btn btn-primary", role:"button" %> <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default", role:"button" %> </div> </p>
+      <p>
+        <div>
+          <%= form_tag "/payments/create" do %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+          <% end %>
+        </div>
+      </p>
+      <p><div><%= link_to 'Back', products_path, class:"btn btn-primary", role:"button" %> <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default", role:"button" %></div> </p>
       <p><%= render 'comments' %></p>
-      <p><small><em><%= will_paginate @comments %> <%= page_entries_info @comments %></em></small> </p>
+      <p><small><em><%= will_paginate @comments %> <%= page_entries_info @comments %></em></small></p>
     </div>
   </div>
 </div>

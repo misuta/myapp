@@ -1,17 +1,17 @@
 <% if signed_in? %>
 <div class="col-xs-12">
-	<h4>Add a review: </h4>
+ <h4>Add a review: </h4>
 </div>
-	<%= form_for([@product, @product.comments.build], html:{class:"form-horizontal"}) do |f| %>
-		<div class="form-group">
-			<%= f.label :body, "Comments", class:"col-xs-2 control label" %>
-			<div class="col-xs-4">
-				<%= f.text_area :body, class:"form-control" %>
-				<div class="rating"></div>
-			</div>
-		</div>
-		<div class="col-xs-offset-2 col-xs-4">
-			<%= f.submit "Submit", class:"btn btn-default" %>
-		</div>
-	<% end %>
+ <%= form_for([@product, @product.comments.build], html:{class:"form-horizontal"}) do |f| %>
+  <div class="form-group">
+   <%= f.label :body, "Comments", class:"col-xs-2 control label" %>
+   <div class="col-xs-4">
+    <%= f.text_area :body, class:"form-control" %>
+    <div class="rating"></div>
+   </div>
+  </div>
+  <div class="col-xs-offset-2 col-xs-4">
+   <%= f.submit "Submit", class:"btn btn-default" %>
+  </div>
+ <% end %>
 <% end %>

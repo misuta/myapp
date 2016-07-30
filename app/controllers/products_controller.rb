@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
       logger.debug "#{params[:q]}"
-      byebug
       if Rails.env.production?
         @products = Product.where("name ilike ?", "%#{search_term}%")
       else

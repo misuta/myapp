@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
  before_filter :authenticate_user!
  before_action :authenticate_user!, :except => [:show, :index]
  load_and_authorize_resource
+
  
  def create
   @product = Product.find(params[:product_id])
@@ -11,6 +12,7 @@ class CommentsController < ApplicationController
    if @comment.save
     format.html { redirect_to @product, notice: 'Review was created succesfully.' }
     format.json { render :show, status: :created, location: @product }
+    format.js
    else
     format.html { redirect_to @product, alert: 'Review was not saved successfully.' }
     format.json { render json: @comment.errors, status: :unprocessable_entity }

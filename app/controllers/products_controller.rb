@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
 
     if params[:q]
       search_term = params[:q]
-      logger.debug "#{params[:q]}"
       if Rails.env.production?
         @products = Product.where("name ilike ?", "%#{search_term}%")
       else
@@ -24,8 +23,6 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = @product.comments.order("created_at DESC").page(params[:page]).per_page(5).accessible_by(current_ability)
-    logger.debug "comments value #{@comments}"
-    logger.debug "user has rights: #{current_ability}"
   end
 
   # GET /products/new

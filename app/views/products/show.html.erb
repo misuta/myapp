@@ -1,6 +1,6 @@
 <% notice %><p id="notice"></p>
 
-
+<% cache @product do %>
 <div class="container-fluid">
   <div class="row">
    <div class="col-sm-offset-2 col-sm-8 col-md-6 this_product">
@@ -33,3 +33,4 @@
   </div>
 </div>
 <%= render 'new_comment' %>
+<% end %>

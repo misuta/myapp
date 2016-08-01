@@ -27,6 +27,8 @@ gem 'stripe'
 
 gem 'brakeman', '~> 3.3', '>= 3.3.3'
 
+gem 'dalli'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

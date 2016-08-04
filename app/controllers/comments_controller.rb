@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
   @comment.user = current_user
   respond_to do |format|
    if @comment.save
+    ActionCable.server.broadcast'product_channel', coment: @comment
     format.html { redirect_to @product, notice: 'Review was created succesfully.' }
     format.json { render :show, status: :created, location: @product }
     format.js

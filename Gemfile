@@ -88,3 +88,5 @@ end
 group :test do
 	gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
 end
+
+ruby "2.3.1"

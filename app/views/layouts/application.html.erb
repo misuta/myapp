@@ -45,10 +45,10 @@
             <li><%= link_to "eBikes", products_path %></li>
             <li><%= link_to "Featured Products", '/static_pages/landing_page' %> </li>
             <li><a href="#">Cruser Bikes</a></li>
+            <% if current_user && current_user.admin? %>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <%= link_to('New Product', new_product_path) %>
+            <% end %>
           </ul>
         </li>
       </ul>

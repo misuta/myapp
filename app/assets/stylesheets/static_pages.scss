@@ -11,8 +11,19 @@ h1 {
 	color: blue;
 }
 
+h2 {
+  font-family: $font-stack; 
+  font-size: 2em;
+  text-align: center;
+}
+
 p {
 	font-size: 1.2em;
+}
+
+.my-image {
+
+  margin-left: 20%;
 }
 
 html {
@@ -52,4 +63,10 @@ footer div {
 
 .contact_page {
   background-color: lavender;
+}
+
+.about-text {
+  font-family: $font-stack; 
+  font-size: 2em;
+  text-align: center;
 }

@@ -2,7 +2,7 @@
 
 <% cache @product do %>
 <div class="container-fluid">
-  <div class="row">
+  <div class="row" data-product-id="<%= @product.id %>">
    <div class="col-sm-offset-2 col-sm-8 col-md-6 this_product">
     <div class="thumbnail">
       <%= image_tag(@product.image_url, class: "img-zoom", data_zoom_image:"#{@product.image_url}")%>

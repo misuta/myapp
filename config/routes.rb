@@ -5,6 +5,7 @@ Rails.application.routes.draw do
    :sign_out => 'logout'}
    
   resources :users
+  
   resources :products do
     resources :comments
   end

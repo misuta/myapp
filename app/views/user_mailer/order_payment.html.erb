@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Dear <%= @user.first_name %>,</h1>
+    <br>
+    <p>
+      We want to thank you for the purchase of <%= @product.name %>
+    </p>
+    <br>
+    <p>In the next days you will charge for the amount <%= @product.price %></p>
+    <p>Thanks for your preference and have a great day!</p>
+  </body>
+</html>

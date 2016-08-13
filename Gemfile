@@ -30,7 +30,18 @@ gem 'brakeman', '~> 3.3', '>= 3.3.3'
 gem 'dalli'
 
 gem 'redis-rails'
+
 gem 'puma', '~> 3.0'
+
+gem 'devise'
+
+gem 'cancancan'
+
+gem 'will_paginate', '~> 3.1.0'
+
+gem 'rails-controller-testing'
+
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,6 +56,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'thin', '~> 1.7'
+  gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.4'
+  gem 'factory_girl_rails', '~> 4.2'
 end
 
 group :development do
@@ -62,27 +76,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :development, :test do
-    gem 'sqlite3'
-end
-
 group :production do
     #gem 'rails_12factor'
     gem 'pg'
-end
-
-group :development, :test do
-	gem 'rspec-rails', '~> 3.4'
-end
-
-gem 'devise'
-
-gem 'cancancan'
-
-gem 'will_paginate', '~> 3.1.0'
-
-group :development, :test do
-  gem 'factory_girl_rails', '~> 4.2'
 end
 
 group :test do

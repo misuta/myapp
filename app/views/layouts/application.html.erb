@@ -58,7 +58,7 @@
             <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
           <% else %>
             <%= link_to('Login', new_user_session_path) %>
-            <%= link_to('Sign in', new_user_registration_path) %>
+            <%= link_to('Sign up', new_user_registration_path) %>
           <% end %> 
         </li>
       </ul> -->
@@ -99,7 +99,7 @@
                 <%= link_to('Login', new_user_session_path) %>
               </li>
               <li role="separator" class="divider"></li>
-              <li><%= link_to('Sign in', new_user_registration_path) %></li>
+              <li><%= link_to('Sign up', new_user_registration_path) %></li>
             <% end %>
           </ul>
         </li>
@@ -126,7 +126,7 @@
   &copy; 2016 Mizuta Berlin
 </footer>-->
 
-<footer class="container-fluid">
+<footer class="site-footer">
   <div >
     <p class="text-muted">&copy; 2016 Mizuta Berlin.</p>
   </div>

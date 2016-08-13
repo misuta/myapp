@@ -16,11 +16,13 @@ describe 'Product' do
 		it 'returns the average rating of all comments' do
 			expect(@product.average_rating).to eq(3.0)
 		end
-		
+	end
+
+	context 'Creating a new product' do
+		let(:product) {FactoryGirl.build(:product, name:"")}
 		it 'is not valid' do
-			expect(FactoryGirl.build(:product, name: "")).not_to be_valid
+			expect(product).not_to be_valid
 		end
 
 	end
-  
 end

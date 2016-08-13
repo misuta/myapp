@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   post 'static_pages/thank_you'
 
+  post 'payments/create' => 'payments#create'
+
   root 'static_pages#index'
 
   mount ActionCable.server => '/cable'

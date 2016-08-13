@@ -19,12 +19,18 @@
       <p class="item_price"><strong><%= @product.price %> €</strong></p>
       <br>
       <p>
+        <% if signed_in? %>
         <div>
           <%= form_tag "/payments/create" do %>
             <%= render partial: "shared/stripe_checkout_button" %>
             <%= hidden_field_tag(:product_id, @product.id) %>
           <% end %>
         </div>
+        <% else %>
+        <div>
+          <h4>Please sign up or login in order to buy our products.</h4>
+        </div>
+        <% end %>
       </p>
       <p><div><%= link_to 'Back', products_path, class:"btn btn-primary", role:"button" %> <%= link_to 'Edit', edit_product_path(@product), class:"btn btn-default", role:"button" %> </div> </p>
       <div class="alert alert-info" style="display:none" role="alert">

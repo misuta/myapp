@@ -15,15 +15,16 @@ describe OrdersController, :type => :controller do
 
 			it 'loads order correctly' do
 
-				get :show, id: order.id
+				get :show, params: { id: order.id}
 				expect(response).to be_success
 				expect(response).to have_http_status(200)
 				
 			end
 		end
+		
 		context 'user is not logged in' do
 			it 'redirects to root' do
-				get :show, id: order.id
+				get :show, params: { id: order.id}
 				expect(response).not_to be_success
 				expect(response).to have_http_status(302)
 				expect(response).to redirect_to(new_user_session_path)

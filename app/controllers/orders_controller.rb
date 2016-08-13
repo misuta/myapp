@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
- before_filter :authenticate_user!
+ before_action :authenticate_user!
  before_action :authenticate_user!
  load_and_authorize_resource
 
  def index
-  @order = Order.accessible_by(current_ability)
+  @order = Order.search.accessible_by(current_ability)
  end
 
  def create

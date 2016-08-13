@@ -3,7 +3,7 @@ require 'rails_helper'
 describe StaticPagesController, :type => :controller do
   context 'GET #index' do
   	before do
-  		get :index
+  		get :index, params: {}
   	end
 
   	it 'responds successfully with an HTTP 200 status code' do
@@ -13,7 +13,9 @@ describe StaticPagesController, :type => :controller do
 
   	it 'renders the index template' do
 
-  		expect(response).to render_template('index')
+      get :index
+
+  		expect(response).to render_template "static_pages/index"
   		
   	end
 

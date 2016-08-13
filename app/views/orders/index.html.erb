@@ -1,13 +1,23 @@
-<h2 id="order_index">Test...</h2>
-<% @orders.each do |order| %>
-	
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-offset-1 col-xs-4">
-				
-				<p><strong>Order ID: </strong><%= order.id %></p>
-				<strong>User ID: </strong><%= order.user_id %>
+<h2 id="order_index">Order</h2>
+
+<% if @order.any? %>
+	<% @orders.each do |order| %>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-4">
+					<p><strong>Order ID: </strong><%= order.id %></p>
+				</div>
+				<div class="col-xs-3">
+					<p><strong>User ID: </strong><%= order.user_id %></p>
+				</div>
+				<div class="col-xs-3">
+					<p><strong>Product ID</strong> <%= order.product_id %></p>
+				</div>
 			</div>
+			<hr>
 		</div>
-	</div>
+	<% end %>
+<% else %>
+	<h4> You don't have any orders.</h4>
 <% end %>

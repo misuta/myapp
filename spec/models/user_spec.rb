@@ -2,26 +2,30 @@ require 'rails_helper'
 
 describe User, :type => :model do
 
-	it 'should not validate users without an email address' do
-		@user = FactoryGirl.build(:user, email: "not_an_email")
-		expect(@user).to_not be_valid
-		
-	end
+	context 'when user is created with an empty email' do
 
-	context 'when user is created' do
+		let (:user) {FactoryGirl.build(:user, email: "")}
 
 		it 'is not valid' do
-			user = FactoryGirl.build(:user, email: "")
+
 			expect(user).not_to be_valid
 			
 		end
+	end
+	context 'When user is created with not a valid email' do
 
-		it 'is valid' do
-			user = FactoryGirl.build(:user)
-			expect(user).to be_valid
-			
+		let(:user) {FactoryGirl.build(:user, email: "not_an_email")}
+
+		it 'should not validate users without an email address' do
+			expect(user).to_not be_valid	
 		end
-
 	end
 
+	context 'When user is created with valid information' do
+		let(:user) {FactoryGirl.build(:user)}
+
+		it 'is valid' do
+			expect(user).to be_valid
+		end
+	end
 end

@@ -137,6 +137,7 @@ GEM
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (2.99.2)
+    mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
@@ -339,6 +340,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
+  mail
   pg
   puma (~> 3.0)
   rails (~> 5.0.0)

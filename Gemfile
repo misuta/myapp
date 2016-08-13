@@ -43,6 +43,8 @@ gem 'rails-controller-testing'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 
+gem 'mail'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -82,7 +84,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
     #gem 'rails_12factor'
     gem 'pg'
-    gem 'mail'
+    
 end
 
 group :test do

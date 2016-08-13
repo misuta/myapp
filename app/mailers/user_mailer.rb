@@ -1,6 +1,20 @@
 class UserMailer < ApplicationMailer
 	default from: "misuta@hotmail.com"
 
+  require 'mail'
+
+  Mail.defaults do
+    delivery_method :smtp, {
+      :address => 'smtp.sendgrid.net',
+      :port => '587',
+      :domain => 'heroku.com',
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
+  end
+
 	def contact_form(email, name, message)
 		@message = message
 		mail(:from => email,

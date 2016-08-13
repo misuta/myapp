@@ -59,6 +59,9 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.4'
   gem 'factory_girl_rails', '~> 4.2'
+  gem 'capybara'
+  gem 'selenium-webdriver', '~> 2.53'
+  gem 'stripe-ruby-mock', '~> 2.3.0', :require => 'stripe_mock'
 end
 
 group :development do

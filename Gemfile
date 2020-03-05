@@ -41,7 +41,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'rails-controller-testing'
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap-sass', '~> 3.4'
 
 gem 'mail'
 

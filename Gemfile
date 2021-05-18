@@ -31,7 +31,7 @@ gem 'dalli'
 
 gem 'redis-rails'
 
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.12'
 
 gem 'devise'
 
